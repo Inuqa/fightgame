@@ -15,4 +15,3 @@ class SimpleMenu:
                     break
             except:
                 break
-
