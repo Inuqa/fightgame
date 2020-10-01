@@ -1,14 +1,12 @@
 class Fighter:
     def __init__(self, name, hp, attack, defence):
-        self.name = self.name
-        self.hp = self.hp
-        self.attack_dmg = self.attack
-        self.defence = self.defence
+        self.name = name
+        self.hp = hp
+        self.attack_dmg = attack
+        self.defence = defence
 
-    def attack(self,b)
+    def attack(self, b):
         b.hp = (b.hp + b.defence) - self.attack_dmg
 
-    def show_status(self)
+    def show_status(self):
         print(self.name, self.hp)
-
-
