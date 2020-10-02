@@ -10,14 +10,14 @@ class Director:
         EventSystem.subscribe(self)
 
     def receive(self, message, emitter = None, data = None):
-        if(message == TitleScene.Events.DONE):
+        if message == TitleScene.Events.DONE:
             current_scene = MenuScene()
             current_scene.render()
             current_scene.loop()
-        elif(message == MenuScene.Events.SELECT_CHARACTER):
+        elif message == MenuScene.Events.SELECT_CHARACTER:
             # TODO:
             print('PENDING: make select character scene')
-        elif(message == MenuScene.Events.REMOVE_CHARACTER):
+        elif message == MenuScene.Events.REMOVE_CHARACTER:
             # TODO:
             print('PENDING: make remove character scene')
 
