@@ -2,7 +2,7 @@ class EventSystem:
     subscribers = []
 
     @staticmethod
-    def emit(message, emitter = None, data = None):
+    def emit(message, emitter=None, data=None):
         for s in EventSystem.subscribers:
             s.receive(message, emitter, data)
 

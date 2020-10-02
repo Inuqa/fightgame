@@ -3,6 +3,7 @@ from enum import Enum
 from base_scene import BaseScene
 from event_system import EventSystem
 
+
 class MenuScene(BaseScene):
     class Events(Enum):
         CREATE_CHARACTER = 1
@@ -26,16 +27,15 @@ Main Menu:
     def loop(self):
         option = input('Select option: ')
         event = None
-        if(option == '1'):
+        if option == '1':
             event = MenuScene.Events.CREATE_CHARACTER
-        elif(option == '2'):
+        elif option == '2':
             event = MenuScene.Events.SELECT_CHARACTER
-        elif(option == '3'):
+        elif option == '3':
             event = MenuScene.Events.LIST_CHARACTER
-        elif(option == '4'):
+        elif option == '4':
             event = MenuScene.Events.SELECT_ENEMY_CHARACTER
-        elif(option == '5'):
+        elif option == '5':
             event = MenuScene.Events.REMOVE_CHARACTER
 
         EventSystem.emit(event, self)
-

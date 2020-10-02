@@ -3,13 +3,14 @@ from event_system import EventSystem
 from title_scene import TitleScene
 from menu_scene import MenuScene
 
+
 class Director:
     current_scene = None
 
     def __init__(self):
         EventSystem.subscribe(self)
 
-    def receive(self, message, emitter = None, data = None):
+    def receive(self, message, emitter=None, data=None):
         if message == TitleScene.Events.DONE:
             current_scene = MenuScene()
             current_scene.render()
