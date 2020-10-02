@@ -2,6 +2,7 @@ from event_system import EventSystem
 
 from title_scene import TitleScene
 from menu_scene import MenuScene
+from create_characterScene import CreateFighterScene
 
 
 class Director:
@@ -15,6 +16,18 @@ class Director:
             current_scene = MenuScene()
             current_scene.render()
             current_scene.loop()
+        elif message == MenuScene.Events.CREATE_CHARACTER:
+            current_scene = CreateFighterScene()
+            current_scene.render()
+            current_scene.loop()
+        elif message == CreateFighterScene.Events.DONE:
+            current_scene = MenuScene()
+            current_scene.render()
+            current_scene.loop()
+
+        elif message == MenuScene.Events.LIST_CHARACTER:
+            current_scene =
+
         elif message == MenuScene.Events.SELECT_CHARACTER:
             # TODO:
             print('PENDING: make select character scene')
