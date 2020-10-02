@@ -13,5 +13,5 @@ class TitleScene(BaseScene):
         """)
 
     def loop(self):
-        input()
+        input('Press <Enter> to start')
         EventSystem.emit(TitleScene.Events.DONE, self)
