@@ -7,9 +7,6 @@ class TitleScene(BaseScene):
     class Events(Enum):
         DONE = 1
 
-    def get_name(self):
-        return 'TITLE_SCENE'
-
     def render(self):
         print("""
         Game
