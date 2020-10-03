@@ -13,7 +13,8 @@ class Fighter:
 
     def __str__(self):
         return f"""
-    Name: {self.name}
-    HP: {self.hp} 
-    Attack DMG {self.attack}
-    Defence {self.defence}"""
+        Name : {self.name}
+          HP : {self.hp}
+  Attack DMG : {self.attack}
+     Defense : {self.defence}
+    """
