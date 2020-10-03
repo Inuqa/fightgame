@@ -31,7 +31,7 @@ class Director:
             current_scene.loop()
 
         elif message == MenuScene.Events.LIST_CHARACTER:
-            current_scene = ShowCharacters()
+            current_scene = ShowCharacters(self.characters)
             current_scene.render()
             current_scene.show_fighters()
 
