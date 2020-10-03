@@ -1,11 +1,11 @@
 from base_scene import BaseScene
 from fighter import Fighter
 
-class ShowCharacters(BaseScene):
+class ShowCharactersScene(BaseScene):
     def render(self):
         print(f"""
         Created Fighters
-        
+
     {self.show_fighters()}
         """)
 
