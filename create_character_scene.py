@@ -4,9 +4,11 @@ from fighter import Fighter
 from base_scene import BaseScene
 from event_system import EventSystem
 
+
 class CreateFighterScene(BaseScene):
     class Events(Enum):
         DONE = 2
+        CREATE = 3
 
     def render(self):
         print("""
@@ -19,9 +21,8 @@ class CreateFighterScene(BaseScene):
         attack = int(input("Attack damage: "))
         defence = int(input("Defence: "))
 
-        Fighter.fighter_created.append(Fighter(name, hp, attack, defence))
+        return Fighter(name, hp, attack, defence)
 
     def loop(self):
-        CreateFighterScene.create(self)
-        input()
-        EventSystem.emit(CreateFighterScene.Events.DONE, self)
+        EventSystem.emit(CreateFighterScene.Events.CREATE, self, self.create())
+        EventSystem.emit(CreateFighterScene.Events.DONE)
