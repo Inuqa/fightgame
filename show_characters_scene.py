@@ -6,14 +6,13 @@ class ShowCharactersScene(BaseScene):
 
     def render(self):
         print(f"""
-        Created Fighters
-
+    Fighters:
     {self.show_fighters()}
         """)
 
     def show_fighters(self):
         all_fighters = ""
         for f in self.characters:
-            all_fighters += str(f) + "\n"
+            all_fighters += str(f)
 
         return all_fighters

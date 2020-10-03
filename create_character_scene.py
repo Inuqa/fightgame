@@ -7,8 +7,8 @@ from event_system import EventSystem
 
 class CreateFighterScene(BaseScene):
     class Events(Enum):
-        DONE = 2
-        CREATE = 3
+        DONE = 1
+        CREATE = 2
 
     def render(self):
         print("""
@@ -18,10 +18,12 @@ class CreateFighterScene(BaseScene):
     def create(self):
         name = input("Name: ")
         hp = int(input("hp: "))
-        attack = int(input("Attack damage: "))
-        defence = int(input("Defence: "))
+        attack = int(input("Attack Damage: "))
+        defense = int(input("Defense: "))
 
-        return Fighter(name, hp, attack, defence)
+        fighter = Fighter(name, hp, attack, defense)
+        fighter.save()
+        return fighter
 
     def loop(self):
         EventSystem.emit(CreateFighterScene.Events.CREATE, self, self.create())

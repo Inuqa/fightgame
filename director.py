@@ -5,6 +5,7 @@ from menu_scene import MenuScene
 from create_character_scene import CreateFighterScene
 from show_characters_scene import ShowCharactersScene
 
+from fighter import Fighter
 
 class Director:
     current_scene = None
@@ -31,6 +32,7 @@ class Director:
             current_scene.loop()
 
         elif message == MenuScene.Events.LIST_CHARACTER:
+            self.characters = Fighter.all()
             current_scene = ShowCharactersScene(self.characters)
             current_scene.render()
             current_scene.show_fighters()
