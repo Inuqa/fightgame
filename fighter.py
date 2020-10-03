@@ -1,6 +1,4 @@
 class Fighter:
-    fighter_created = []
-
     def __init__(self, name, hp, attack, defence):
         self.name = name
         self.hp = hp

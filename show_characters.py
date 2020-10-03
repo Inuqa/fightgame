@@ -1,5 +1,5 @@
 from base_scene import BaseScene
-from fighter import Fighter
+from director import Director
 
 class ShowCharacters(BaseScene):
     def render(self):
@@ -11,7 +11,7 @@ class ShowCharacters(BaseScene):
 
     def show_fighters(self):
         all_fighters = ""
-        for f in Fighter.fighter_created:
+        for f in Director.characters:
             all_fighters += str(f) + "\n"
 
         return all_fighters
