@@ -4,7 +4,6 @@ from fighter import Fighter
 from base_scene import BaseScene
 from event_system import EventSystem
 
-
 class CreateFighterScene(BaseScene):
     class Events(Enum):
         DONE = 2
@@ -12,7 +11,6 @@ class CreateFighterScene(BaseScene):
     def render(self):
         print("""
         Create a Fighter
-        
         """)
 
     def create(self):

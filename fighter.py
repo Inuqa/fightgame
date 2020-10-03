@@ -13,5 +13,9 @@ class Fighter:
         self.attack = attack
         self.defence = defence
 
-    def show_stats(self):
-        print(self.name, self.hp, self.attack, self.defence)
+    def __str__(self):
+        return f"""
+    Name: {self.name}
+    HP: {self.hp} 
+    Attack DMG {self.attack}
+    Defence {self.defence}"""

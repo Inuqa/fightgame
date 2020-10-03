@@ -2,7 +2,8 @@ from event_system import EventSystem
 
 from title_scene import TitleScene
 from menu_scene import MenuScene
-from create_characterScene import CreateFighterScene
+from create_character_scene import CreateFighterScene
+from show_characters import ShowCharacters
 
 
 class Director:
@@ -26,7 +27,9 @@ class Director:
             current_scene.loop()
 
         elif message == MenuScene.Events.LIST_CHARACTER:
-            current_scene =
+            current_scene = ShowCharacters()
+            current_scene.render()
+            current_scene.show_fighters()
 
         elif message == MenuScene.Events.SELECT_CHARACTER:
             # TODO:
