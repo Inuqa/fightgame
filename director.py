@@ -3,11 +3,12 @@ from event_system import EventSystem
 from title_scene import TitleScene
 from menu_scene import MenuScene
 from create_character_scene import CreateFighterScene
-from show_characters import ShowCharacters
+from show_characters_scene import ShowCharactersScene
 
 
 class Director:
     current_scene = None
+    characters = []
 
     def __init__(self):
         EventSystem.subscribe(self)
@@ -21,13 +22,16 @@ class Director:
             current_scene = CreateFighterScene()
             current_scene.render()
             current_scene.loop()
+        elif message == CreateFighterScene.Events.CREATE:
+            Director.characters.append(data)
+
         elif message == CreateFighterScene.Events.DONE:
             current_scene = MenuScene()
             current_scene.render()
             current_scene.loop()
 
         elif message == MenuScene.Events.LIST_CHARACTER:
-            current_scene = ShowCharacters()
+            current_scene = ShowCharactersScene(self.characters)
             current_scene.render()
             current_scene.show_fighters()
 
